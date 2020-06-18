@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="interest.css">
 
     </head>
@@ -18,7 +19,23 @@
             </nav>
           </header>
         <div>
-            <form id="interest-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+        <div class="hero-image">
+                <h1>Calculate Interest rate</h1>
+            </div>
+            <section>
+            <p>
+                Calculate the amount you will acquire at the end of saving period and see if its worthwhile.
+                The interest rates are subject to change. 
+            </p>
+        </section>
+            <section>
+            <div class="row" >
+              <div class="col-md-2" id="story" ></div>
+                <div class="col-md-4" >
+                    <img src="https://images.pexels.com/photos/669622/pexels-photo-669622.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 alt="bar graph" width="84%" height="70%">   
+                </div>
+                <div class="col-md-4"id="about">
+                <form id="interest-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                 <label >Amount you want to save</label>
                 <input type="number"class="form-control" min="1000" name="amount" required placeholder="Enter the amount you want save">
                 <label >Duration</label>
@@ -42,15 +59,18 @@
                 <button id="calculate">Calculate</button>
             
             </form>
-
+        </div>
+        </section>
+        
+            
             <?php 
             $host="localhost";
             $user="root";
             $password="";
             $db="";
-            $amount ="";
-            $year ="";
-            
+            $amount = "";
+            $year = "";
+            error_reporting(0);
             session_start(); 
             
             $_SESSION['amount']  =$_POST['amount'];

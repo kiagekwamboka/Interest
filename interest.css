@@ -1,6 +1,7 @@
 body{
     font-family: 'CircularStd', sans-serif;
     list-style: none;
+    min-height: 100vh;
 }
 #header{
     display: flex;
@@ -42,6 +43,21 @@ body{
     color: white;
     outline: 1px solid whitesmoke;
 }
+.hero-image {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px;
+}
+.row{
+    margin: 5px;
+}
+.col-md-4{
+    margin: 0px;
+  }
+ .col-md-4 img{
+     max-width: 100%;
+     height: auto;
+  }
 input{
     display: inline-block;
     padding: 5px;
@@ -63,7 +79,8 @@ select{
 }
 #interest-form{
     display: flex;
-    align-content: center;
+    align-content: flex-end;
+    justify-content: flex-start;
     flex-flow: column wrap;
     font-size: 18px;
     padding: 10px;
