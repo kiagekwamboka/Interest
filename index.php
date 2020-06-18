@@ -14,8 +14,6 @@
                 <a class="nav-link" href="#stories">Stories</a>
                 <a class="nav-link" href="#faq">FAQ</a>
                 <a class="nav-link" href="#blog">Blog</a>
-                <a class="nav-link" href="#login">Log In</a>
-                <a class="nav-link" href="#about"><button>Create a Free Account</button></a>
             </nav>
           </header>
         <div>
