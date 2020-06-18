@@ -1,0 +1,105 @@
+body{
+    font-family: 'CircularStd', sans-serif;
+    list-style: none;
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    padding: 10px;
+    margin: 10px;
+}
+#header{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+#header-img{
+    margin: 5px 0px 0px 5px;
+}
+#nav-bar{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.nav-link{
+    margin: 0px 20px;
+    text-decoration: none;
+    color:#034aa1;
+}
+.nav-link button{
+    display: inline-block;
+    padding: 8px;
+    background: white;
+    outline: 1px solid #034aa1;
+}
+.nav-link:hover{
+    color:rgb(14, 224, 95);
+}
+.nav-link:hover button{
+    background: #034aa1;
+    color: white;
+    outline: 1px solid whitesmoke;
+}
+input{
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+    outline: none;
+}
+.form-control{
+    width: 300px;
+   background:gainsboro;
+}
+label{
+    display:block;
+    margin: 5px;
+    background:none;
+}
+select{
+    margin: 5px;
+    padding: 5px;
+}
+#interest-form{
+    display: flex;
+    align-content: center;
+    flex-flow: column wrap;
+    font-size: 18px;
+    padding: 10px;
+}
+#calculate{
+    display: block;
+    padding: 8px;
+    margin: 5px;
+}
+footer {
+    background-color:white;
+    color: #034aa1;
+    bottom: 0;
+    margin: 0;
+  }
+footer a {
+text-decoration: none;
+color: #034aa1;
+}  
+.ft-main {
+display: flex;
+flex-wrap: wrap;
+}
+@media only screen and (min-width: 480px) {
+.ft-main {
+    justify-content: space-evenly;
+}
+}
+@media only screen and (min-width: 1200px ) {
+.ft-main {
+    justify-content: space-around;
+}
+}
+.ft-legal-list {
+width: 100%;
+text-align: center;
+background-color: white;
+margin: 0;
+}
