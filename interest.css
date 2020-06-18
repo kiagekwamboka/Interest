@@ -7,14 +7,14 @@ body{
     list-style: none;
     min-height: 100vh;
 }
-#header{
+.header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
     padding: 10px;
 }
-#header{
+.header{
     position: sticky;
     top: 0;
     z-index: 999;
@@ -33,11 +33,10 @@ body{
     text-decoration: none;
     color:#034aa1;
 }
-.nav-link button{
+button{
     display: inline-block;
-    padding: 8px;
-    background: white;
-    outline: 1px solid #034aa1;
+    background: #034aa1;
+    color:white;
 }
 .nav-link:hover{
     color:rgb(14, 224, 95);
@@ -47,17 +46,112 @@ body{
     color: white;
     outline: 1px solid whitesmoke;
 }
+
+.header .nav-link {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+  
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .nav-link {
+    max-height: 240px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
+  
+  @media only screen and (max-width:768px) {
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding: 20px 30px;
+    }
+    .header .nav-link {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+  }
+  
 .hero-image {
     display: flex;
     justify-content: center;
     margin: 10px 0px;
+    color: #034aa1;
+}
+p{
+    padding: 10px;
 }
 .row{
     margin: 15px;
     padding: 20px;
 }
 .col-md-4{
-    margin: 0px;
+    margin: 20px;
   }
  .col-md-4 img{
      max-width: 100%;
@@ -70,7 +164,6 @@ input{
     outline: none;
 }
 .form-control{
-    width: 300px;
    background:gainsboro;
 }
 label{
@@ -88,7 +181,9 @@ select{
     justify-content: flex-start;
     flex-flow: column wrap;
     font-size: 18px;
-    padding: 10px;
+    padding: 20px;
+    background: #034aa1;
+    color: white;
 }
 #calculate{
     display: block;

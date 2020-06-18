@@ -7,9 +7,11 @@
 
     </head>
     <body>
-        <header id="header" class="navbar-fixed-to">
+        <header class="header" class="navbar-fixed-to">
             <img id="header-img" src="https://storage.googleapis.com/piggybankservice.appspot.com/statics/piggy-png_1_.png" width="10%" height="1.5%" alt="color">
             <nav id="nav-bar">
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                 <a class="nav-link" href="#about">About</a>
                 <a class="nav-link" href="#stories">Stories</a>
                 <a class="nav-link" href="#faq">FAQ</a>
@@ -18,26 +20,23 @@
           </header>
         <div>
         <div class="hero-image">
-                <h1>Calculate Interest rate</h1>
+                <h2>Interest Calculator</h2>
             </div>
-            <section>
-            <p>
-                Calculate the amount you will acquire at the end of saving period and see if its worthwhile.
-                The interest rates are subject to change. 
-            </p>
-        </section>
             <section>
             <div class="row" >
               <div class="col-md-2" id="story" ></div>
                 <div class="col-md-4" >
-                    <img src="https://images.pexels.com/photos/669622/pexels-photo-669622.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 alt="bar graph" width="84%" height="70%">   
+                    <img src="https://images.pexels.com/photos/669622/pexels-photo-669622.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 alt="bar graph" width="95%" height="80%">   
+                <p>
+                    SAFELOCK <br> Lock your funds away for a period of time and get interest rates of upto 15.5% per annum.
+                </p>
                 </div>
                 <div class="col-md-4"id="about">
                 <form id="interest-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-                <label >Amount you want to save</label>
-                <input type="number"class="form-control" min="1000" name="amount" required placeholder="Enter the amount you want save">
+                <label >Amount you want to save:</label>
+                <input type="number"class="form-control" min="1000" name="amount" required placeholder="Enter amount">
                 <label >Duration</label>
-                <input type="number" class="form-control" name="year" placeholder="Enter how long you want to save" required>
+                <input type="number" class="form-control" name="year" placeholder="Year(s)" required>
                 <!--<label for="dropdown">Package</label>
                 <select id="dropdown" class="form-control" name="package">
                     <option disabled selected value>Select package</option>
@@ -53,14 +52,15 @@
                     <option value="usd">USD</option>
                     <option value="naira">NAIRA</option>
                 </select>-->
-                
+                <input type="reset">
                 <button id="calculate">Calculate</button>
-            
-            </form>
-        </div>
-        </section>
-        
-            
+
+            <table>
+                <tr>
+                    <th>Compound Interest is:</th>
+                </tr>
+                <tr>
+                    <td>
             <?php 
             $host="localhost";
             $user="root";
@@ -76,7 +76,7 @@
             //$_SESSION['currency']  =$_POST['currency'];
             //$_SESSION['package']  =$_POST['package'];
             
-            function interest($investment,$year,$rate=15,$n=1){
+            function interest($investment,$year,$rate=13,$n=1){
                 $accumulated=0;
                 if ($year > 1){
                         $accumulated=interest($investment,$year-1,$rate,$n);
@@ -87,7 +87,7 @@
                 }
             $amount=0;
             $years=0;
-            $rate=15;
+            $rate=13;
             $n=1;
             
             if (isset($_POST['amount'])){$amount=$_POST['amount'];}
@@ -96,26 +96,33 @@
             if (isset($_POST['n'])){$n=$_POST['n'];}
             
             if (isset($_POST['amount'])){
-                echo "After ". $years. " years, the accumulated interest is ". interest($amount,$years,$rate,$n)."\n";
+                echo interest($amount,$years,$rate,$n)."\n";
             }
-            
             ?> 
+            </td>
+                </tr>
+            </table>
+            </form>
+        </div>
+        </section>
             <footer>
                 <section class="ft-main">
                   <div class="ft-main-item">
-                    <P>Quick Links</P>
                     <ul>
                       <li><a href="#index.html">Autosave</a></li>
                       <li><a href="#piggy.html">PiggyLink</a></li>
                       <li><a href="#quicksave.html">QuickSave</a></li>
-                      <li><a href="#safelock.html">SafeLock</a></li>
-                      <li><a href="#salary.html">Salary Management</a></li>
                     </ul>
                   </div>
                   <div class="ft-main-item">
-                    <p>COMPANY</p>
                     <ul>
+                      <li><a href="#safelock.html">SafeLock</a></li>
+                      <li><a href="#salary.html">Salary Management</a></li>
                       <li><a href="#">FAQ</a></li>
+                    </ul>
+                  </div>
+                  <div class="ft-main-item">
+                    <ul>
                       <li><a href="#">About</a></li>
                       <li><a href="#">Privacy policy</a></li>
                       <li><a href="#">Terms of Use</a></li>
