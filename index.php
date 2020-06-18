@@ -10,8 +10,6 @@
         <header class="header" class="navbar-fixed-to">
             <img id="header-img" src="https://storage.googleapis.com/piggybankservice.appspot.com/statics/piggy-png_1_.png" width="10%" height="1.5%" alt="color">
             <nav id="nav-bar">
-            <input class="menu-btn" type="checkbox" id="menu-btn" />
-            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                 <a class="nav-link" href="#about">About</a>
                 <a class="nav-link" href="#stories">Stories</a>
                 <a class="nav-link" href="#faq">FAQ</a>
